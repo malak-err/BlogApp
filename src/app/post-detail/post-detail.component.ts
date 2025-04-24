@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent {
+  
 
 }
