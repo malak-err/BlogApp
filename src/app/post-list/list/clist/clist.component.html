@@ -20,8 +20,8 @@
         </td>
         <td>{{ article.categorie }}</td>
         <td>
-          <button class="btn btn-sm btn-info me-2" (click)="modifierArticle(article)">Modifier</button>
-          <button class="btn btn-sm btn-danger" (click)="supprimerArticle(article.id)">Supprimer</button>
+          <button class="btn btn-sm btn-info me-2" (click)="update(article)">Modifier</button>
+          <button class="btn btn-sm btn-danger" (click)="delete(article.id)">Supprimer</button>
         </td>
       </tr>
       <tr *ngIf="articles.length === 0">
