@@ -7,7 +7,7 @@ import { Article } from '../models/article';
   providedIn: 'root'
 })
 export class PostServiceService {
- private apiurl="http://localhost:3000";
+ private apiurl="http://localhost:3000/articles";
   constructor(private http:HttpClient) { }
   getArticle():Observable<Article[]>{
     return this.http.get<Article[]>(`${this.apiurl}${articles}`);
