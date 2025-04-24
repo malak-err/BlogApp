@@ -6,9 +6,10 @@ import { ClistComponent } from './post-list/list/clist/clist.component';
 import { ModifierComponent } from './post-list/modifier/modifier.component';
 import { AddComponent } from './post-list/add/add.component';
 import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  {path:'',component:LoginComponent},
   { path: 'home', component: HomeComponent},
   { path: 'post-detail', component: PostDetailComponent},
   { path: 'post-list', component: ClistComponent},

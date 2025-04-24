@@ -12,6 +12,7 @@ import { ClistComponent } from './post-list/list/clist/clist.component';
 import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -22,18 +23,17 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PostDetailComponent,
     NavbarComponent,
-
     AddComponent,
     ClistComponent,
-  
     SuprimerComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

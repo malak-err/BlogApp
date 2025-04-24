@@ -2,17 +2,16 @@
     "utilisateurs": [
       {
         "id": 1,
-        "nom": "admin",
-        "email": "admin@example.com",
-        "motDePasse": "admin123",
-        "role": "admin"
+     
+        "email": "kawtar@gmail",
+        "motDePasse": "123"
+       
       },
       {
         "id": 2,
-        "nom": "auteur1",
+       
         "email": "auteur1@example.com",
-        "motDePasse": "pass123",
-        "role": "auteur"
+        "motDePasse": "pass123"
       }
     ],
     "articles": [
