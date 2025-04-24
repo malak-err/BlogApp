@@ -15,4 +15,11 @@ export class PostServiceService {
   saveArticle(article:Article):Observable<Article>{
     return this.http.post<Article>(this.apiurl,article);
   }
+  updateArticle(id:number ,article:Article): Observable<Article>{
+    return this.http.put<Article>(`${this.apiurl}/${id}`, article)
+  }
+  deleteArticle(id:number):Observable<Article>{
+    return this.http.delete<Article>(`${this.apiurl}/${id}`)
+  }
+
 }
