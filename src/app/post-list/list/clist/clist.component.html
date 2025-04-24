@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let article of articles">
+      <tr *ngFor="let article of article">
         <td>{{ article.id }}</td>
         <td>{{ article.titre }}</td>
         <td>{{ article.contenu | slice:0:100 }}{{ article.contenu.length > 100 ? '...' : '' }}</td>
@@ -22,9 +22,11 @@
         <td>
           <button class="btn btn-sm btn-info me-2" (click)="update(article)">Modifier</button>
           <button class="btn btn-sm btn-danger" (click)="delete(article.id)">Supprimer</button>
+          <button class="btn btn-sm btn-info me-2" >Modifier</button>
+          <button class="btn btn-sm btn-danger" >Supprimer</button>
         </td>
       </tr>
-      <tr *ngIf="articles.length === 0">
+      <tr *ngIf="article.length === 0">
         <td colspan="6" class="text-center">Aucun article disponible</td>
       </tr>
     </tbody>
