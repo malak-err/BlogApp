@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Article } from 'src/app/models/article';
 import { PostServiceService } from 'src/app/services/post-service.service';
 
 @Component({
@@ -8,16 +9,21 @@ import { PostServiceService } from 'src/app/services/post-service.service';
   styleUrls: ['./clist.component.css']
 })
 export class ClistComponent implements OnInit {
+  article: any;
 
   constructor(private postService: PostServiceService,
-    private route: ActivatedRoute,){
+    private route: ActivatedRoute,private router: Router){
 
   }
   ngOnInit(): void{
-    this.postService.getArticle.subscribe((data: any) => {
-      
-      
-    });
+  this.read();      
+    }
+  read(){
+    this.postService.getArticle().subscribe(res=>{
+      this.article=res;
+    })
   }
-
-}
+  
+  
+  }
+ 

@@ -9,10 +9,11 @@ import { Article } from '../models/article';
 export class PostServiceService {
  private apiurl="http://localhost:3000/articles";
   constructor(private http:HttpClient) { }
+  //LIRE ARTICLE
   getArticle():Observable<Article[]>{
-
     return this.http.get<Article[]>(this.apiurl );
   }
+  // AJOUTER ARTICLE
   saveArticle(article:Article):Observable<Article>{
     return this.http.post<Article>(this.apiurl,article);
 

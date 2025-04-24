@@ -1,1 +1,31 @@
-<p>clist works!</p>
+ <!-- Tableau des articles -->
+ <table class="table table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Image</th>
+        <th>Catégorie</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{ article.id }}</td>
+        <td>{{ article.titre }}</td>
+        <td>{{ article.contenu | slice:0:100 }}{{ article.contenu.length > 100 ? '...' : '' }}</td>
+        <td>
+          <img [src]="article.image" alt="{{ article.titre }}" style="max-width: 100px; max-height: 100px;">
+        </td>
+        <td>{{ article.categorie }}</td>
+        <td>
+          <button class="btn btn-sm btn-info me-2" (click)="modifierArticle(article)">Modifier</button>
+          <button class="btn btn-sm btn-danger" (click)="supprimerArticle(article.id)">Supprimer</button>
+        </td>
+      </tr>
+      <tr *ngIf="articles.length === 0">
+        <td colspan="6" class="text-center">Aucun article disponible</td>
+      </tr>
+    </tbody>
+  </table>
