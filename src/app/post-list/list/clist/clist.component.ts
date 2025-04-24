@@ -12,7 +12,8 @@ export class ClistComponent implements OnInit {
   article: any;
 
   constructor(private postService: PostServiceService,
-    private route: ActivatedRoute,private router: Router){
+    private route: ActivatedRoute,
+    private router: Router){
 
   }
   ngOnInit(): void{

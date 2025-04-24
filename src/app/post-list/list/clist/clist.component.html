@@ -20,13 +20,13 @@
         </td>
         <td>{{ article.categorie }}</td>
         <td>
-          <button class="btn btn-sm btn-info me-2" (click)="update(article)">Modifier</button>
-          <button class="btn btn-sm btn-danger" (click)="delete(article.id)">Supprimer</button>
+          <button class="btn btn-sm btn-info me-2" >Modifier</button>
+          <button class="btn btn-sm btn-danger" >Supprimer</button>
           <button class="btn btn-sm btn-info me-2" >Modifier</button>
           <button class="btn btn-sm btn-danger" >Supprimer</button>
         </td>
       </tr>
-      <tr *ngIf="article.length === 0">
+      <tr *ngIf="article?.length === 0">
         <td colspan="6" class="text-center">Aucun article disponible</td>
       </tr>
     </tbody>
