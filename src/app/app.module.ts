@@ -9,6 +9,10 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddComponent } from './post-list/add/add.component';
+import { ClistComponent } from './post-list/list/clist/clist.component';
+import { ModifierComponent } from './post-list/list/modifier/modifier.component';
+import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     PosteListComponent,
     PostDetailComponent,
     PostFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    AddComponent,
+    ClistComponent,
+    ModifierComponent,
+    SuprimerComponent
   ],
   imports: [
     BrowserModule,
