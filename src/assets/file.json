@@ -1,0 +1,52 @@
+{
+    "utilisateurs": [
+      {
+        "id": 1,
+        "nom": "admin",
+        "email": "admin@example.com",
+        "motDePasse": "admin123",
+        "role": "admin"
+      },
+      {
+        "id": 2,
+        "nom": "auteur1",
+        "email": "auteur1@example.com",
+        "motDePasse": "pass123",
+        "role": "auteur"
+      }
+    ],
+    "articles": [
+      {
+        "id": 1,
+        "titre": "Introduction à Angular",
+        "contenu": "Angular est un framework développé par Google...",
+        "image": "angular.jpg",
+        "categorie": "Développement Web"
+        
+      },
+      {
+        "id": 2,
+        "titre": "Comprendre Node.js",
+        "contenu": "Node.js permet d'exécuter du JavaScript côté serveur...",
+        "image": "nodejs.jpg",
+        "categorie": "Back-end"
+       
+      }
+    ],
+    "commentaires": [
+      {
+        "id": 1,
+        "articleId": 1,
+        "auteur": "Utilisateur anonyme",
+        "contenu": "Très bon article, merci !"
+      },
+      {
+        "id": 2,
+        "articleId": 2,
+        "auteur": "admin",
+        "contenu": "Article clair et précis."
+      }
+    ]
+    
+  }
+  

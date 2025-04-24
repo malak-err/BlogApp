@@ -8,6 +8,8 @@ import { PosteListComponent } from './poste-list/poste-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
