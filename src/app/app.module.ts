@@ -11,6 +11,8 @@ import { AddComponent } from './post-list/add/add.component';
 import { ClistComponent } from './post-list/list/clist/clist.component';
 import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -30,7 +32,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
