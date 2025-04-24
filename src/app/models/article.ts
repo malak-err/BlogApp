@@ -1,5 +1,5 @@
 export class Article {
-    id:any;
+    id?:number;
     titre!:string;
     contenu!:string;
     image!:string;
