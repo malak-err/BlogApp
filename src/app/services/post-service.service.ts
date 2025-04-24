@@ -10,10 +10,12 @@ export class PostServiceService {
  private apiurl="http://localhost:3000/articles";
   constructor(private http:HttpClient) { }
   getArticle():Observable<Article[]>{
+
     return this.http.get<Article[]>(this.apiurl );
   }
   saveArticle(article:Article):Observable<Article>{
     return this.http.post<Article>(this.apiurl,article);
+
   }
   updateArticle(id:number ,article:Article): Observable<Article>{
     return this.http.put<Article>(`${this.apiurl}/${id}`, article)
