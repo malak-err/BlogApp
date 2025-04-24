@@ -21,18 +21,16 @@
         "titre": "Introduction à Angular",
         "contenu": "Angular est un framework développé par Google...",
         "image": "angular.jpg",
-        "categorie": "Développement Web",
-        "auteurId": 2,
-        "motsCles": ["Angular", "TypeScript", "Frontend"]
+        "categorie": "Développement Web"
+        
       },
       {
         "id": 2,
         "titre": "Comprendre Node.js",
         "contenu": "Node.js permet d'exécuter du JavaScript côté serveur...",
         "image": "nodejs.jpg",
-        "categorie": "Back-end",
-        "auteurId": 2,
-        "motsCles": ["Node.js", "JavaScript", "Serveur"]
+        "categorie": "Back-end"
+       
       }
     ],
     "commentaires": [
@@ -48,11 +46,7 @@
         "auteur": "admin",
         "contenu": "Article clair et précis."
       }
-    ],
-    "categories": [
-      { "id": 1, "nom": "Développement Web" },
-      { "id": 2, "nom": "Back-end" },
-      { "id": 3, "nom": "Base de données" }
     ]
+    
   }
   
