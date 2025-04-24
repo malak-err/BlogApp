@@ -7,9 +7,22 @@ import { Article } from '../models/article';
   providedIn: 'root'
 })
 export class PostServiceService {
- private apiurl="http://localhost:3000/";
+ private apiurl="http://localhost:3000/articles";
   constructor(private http:HttpClient) { }
+  //LIRE ARTICLE
   getArticle():Observable<Article[]>{
-    return this.http.get<Article[]>(this.apiurl + 'articles');
+    return this.http.get<Article[]>(this.apiurl );
   }
+  // AJOUTER ARTICLE
+  saveArticle(article:Article):Observable<Article>{
+    return this.http.post<Article>(this.apiurl,article);
+
+  }
+  updateArticle(id:number ,article:Article): Observable<Article>{
+    return this.http.put<Article>(`${this.apiurl}/${id}`, article)
+  }
+  deleteArticle(id:number):Observable<Article>{
+    return this.http.delete<Article>(`${this.apiurl}/${id}`)
+  }
+
 }
