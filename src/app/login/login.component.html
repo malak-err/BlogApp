@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page de Connexion</title>
-</head>
-<body>
-  <div class="login-container">
-    <h2>Connexion</h2>
-    <form action="#" method="POST">
-      <div class="input-group">
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" id="username" name="username" required>
+<div class="login-container">
+  <h2>Connexion</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="input-group">
+      <label for="email">Email :</label>
+      <input id="email" type="email" formControlName="email" />
+      <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">L'email est requis.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">L'email n'est pas valide.</small>
       </div>
-      <div class="input-group">
-        <label for="password">Mot de passe</label>
-        <input type="password" id="password" name="password" required>
+    </div>
+    <div class="input-group">
+      <label for="motDePasse">Mot de passe :</label>
+      <input id="motDePasse" type="password" formControlName="motDePasse" />
+      <div *ngIf="loginForm.get('motDePasse')?.invalid && loginForm.get('motDePasse')?.touched">
+        <small *ngIf="loginForm.get('motDePasse')?.errors?.['required']">Le mot de passe est requis.</small>
       </div>
-      <button type="submit" (click)="login()">Se connecter</button>
-    </form>
-  </div>
-</body>
-</html>
-
+    </div>
+    <button type="submit" [disabled]="isLoading || loginForm.invalid">
+      {{ isLoading ? 'Connexion en cours...' : 'Se connecter' }}
+    </button>
+  </form>
+</div>

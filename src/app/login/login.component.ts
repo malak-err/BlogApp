@@ -17,27 +17,35 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({ 
       email : [''], 
-      motpasse : ['', Validators.required] 
+      motDePasse : ['', Validators.required] 
       })
   }
  
-  login(){ 
+  isLoading = false;
+
+  login() {
+    this.isLoading = true;
     this.http.get<any>("http://localhost:3000/utilisateurs")
-    .subscribe(res => {
-      const user = res.find((a: any) => {
-        return a.email === this.loginForm.value.email &&
-               a.password === this.loginForm.value.motpasse;
-      });
+      .subscribe(
+        res => {
+          const user = res.find((a: any) => {
+            return a.email === this.loginForm.value.email &&
+                   a.motDePasse === this.loginForm.value.motDePasse;
+          });
   
-    if(user){ 
-    alert('Connexion réussie'); 
-    this.loginForm.reset() 
-    this.router.navigate(["/home"]) 
-    }else{ 
-    alert("utilisateur non trouvé") 
-    } 
-    },err=>{ 
-    alert("Quelque chose s'est passé faux") 
-    }) 
-    } 
+          if (user) {
+            alert('Connexion réussie');
+            this.loginForm.reset();
+            this.router.navigate(["home"]);
+          } else {
+            alert("Utilisateur non trouvé");
+          }
+          this.isLoading = false;
+        },
+        err => {
+          alert("Une erreur s'est produite. Vérifiez si le serveur est en cours d'exécution.");
+          this.isLoading = false;
+        }
+      );
+  }
 }
