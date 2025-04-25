@@ -12,9 +12,9 @@ import { authGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Utiliser la fonction
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, 
   { path: 'post-detail', component: PostDetailComponent},
-  { path: 'post-list', component: ClistComponent},
+  { path: 'post-list', component: ClistComponent ,canActivate: [authGuard]},
   { path: 'modifier', component: ModifierComponent},
   { path: 'add', component: AddComponent},
   { path: 'suprimer', component: SuprimerComponent},
