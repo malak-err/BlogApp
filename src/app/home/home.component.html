@@ -11,13 +11,13 @@
     </div>
   </div>
   
-  <!-- Section Articles Récents -->
+ 
   <div class="recent-articles-section">
     <h2 class="section-title">Articles Récents</h2>
     <div class="articles-grid">
-      <div class="article-card" >
-        <img  alt="Image Article" class="article-image">
-        <h3 class="article-title"></h3>
+      <div class="article-card" *ngFor="let article of articles" >
+        <img src="{{article.image}}"  alt="Image Article" class="article-image">
+        <h3 class="article-title">{{article.titre}}</h3>
       </div>
     </div>
   </div>

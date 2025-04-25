@@ -19,7 +19,7 @@
         "id": 1,
         "titre": "Introduction à Angular",
         "contenu": "Angular est un framework développé par Google...",
-        "image": "angular.jpg",
+        "image": "assets/angular.jpg",
         "categorie": "Développement Web"
         
       },
@@ -27,7 +27,7 @@
         "id": 2,
         "titre": "Comprendre Node.js",
         "contenu": "Node.js permet d'exécuter du JavaScript côté serveur...",
-        "image": "nodejs.jpg",
+        "image": "assets/nodejs.png",
         "categorie": "Back-end"
        
       }
