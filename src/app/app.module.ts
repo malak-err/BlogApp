@@ -13,6 +13,7 @@ import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommentaireComponent } from './commentaire/commentaire.component';
 
 
 
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ClistComponent,
     SuprimerComponent,
     LoginComponent,
+    CommentaireComponent,
   ],
   imports: [
     BrowserModule,

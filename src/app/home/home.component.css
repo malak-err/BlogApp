@@ -117,11 +117,9 @@
   
   .article-image {
     width: 100%;
-    height: 200px; /* Agrandit l'image pour qu'elle remplisse plus */
+    height: 200px; 
     object-fit: cover;
-    border-radius: 0; /* Pas de bord arrondi, car c'est la carte entière qui est arrondie */
-  }
-  
+    border-radius: 0; 
   .article-title {
     font-size: 18px;
     color: #333;
@@ -132,4 +130,4 @@
     align-items: center;
     justify-content: center;
   }
-  
+}
