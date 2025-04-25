@@ -104,24 +104,32 @@
     background: white;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    padding: 20px;
+    overflow: hidden; /* Pour que l'image respecte les coins arrondis */
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 320px; /* DIMINUE la hauteur de la carte */
   }
   
   .article-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   
   .article-image {
     width: 100%;
-    height: 180px;
+    height: 200px; /* Agrandit l'image pour qu'elle remplisse plus */
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    border-radius: 0; /* Pas de bord arrondi, car c'est la carte entière qui est arrondie */
   }
   
   .article-title {
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-    
+  
