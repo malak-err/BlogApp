@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthserviceService } from '../services/authservice.service'; // Importer le service
 
 @Component({
   selector: 'app-login',
@@ -9,21 +10,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginForm!: FormGroup
-  constructor(private http:HttpClient,
-    private router:Router,
-   private formBuilder: FormBuilder
-  ){}
+  public loginForm!: FormGroup;
+  public isLoading = false;
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private authService: AuthserviceService 
+  ) {}
+
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({ 
-      email : [''], 
-      motDePasse : ['', Validators.required] 
-      })
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]], 
+      motDePasse: ['', Validators.required]
+    });
   }
- 
-  isLoading = false;
 
   login() {
+    if (this.loginForm.invalid) {
+      alert('Veuillez remplir tous les champs correctement.');
+      return;
+    }
+
     this.isLoading = true;
     this.http.get<any>("http://localhost:3000/utilisateurs")
       .subscribe(
@@ -32,11 +41,11 @@ export class LoginComponent implements OnInit {
             return a.email === this.loginForm.value.email &&
                    a.motDePasse === this.loginForm.value.motDePasse;
           });
-  
+
           if (user) {
-            alert('Connexion réussie');
+            this.authService.login(this.loginForm.value.email, this.loginForm.value.motDePasse); // Mettre à jour l'état
             this.loginForm.reset();
-            this.router.navigate(["home"]);
+            this.router.navigate(["home"]); 
           } else {
             alert("Utilisateur non trouvé");
           }

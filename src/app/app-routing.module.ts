@@ -7,15 +7,18 @@ import { ModifierComponent } from './post-list/modifier/modifier.component';
 import { AddComponent } from './post-list/add/add.component';
 import { SuprimerComponent } from './post-list/suprimer/suprimer.component';
 import { LoginComponent } from './login/login.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
-  { path: 'home', component: HomeComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Utiliser la fonction
   { path: 'post-detail', component: PostDetailComponent},
   { path: 'post-list', component: ClistComponent},
   { path: 'modifier', component: ModifierComponent},
   { path: 'add', component: AddComponent},
   { path: 'suprimer', component: SuprimerComponent},
+  { path: '**', redirectTo: '/login' }
 
 
 
